@@ -9,7 +9,9 @@ Django in Docker.
 ## Usage 
 
 ```
-docker run -d -p 5000:5000 \
+docker run -d \
+    --log-opt max-size=50m \
+    -p 5000:5000 \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
@@ -18,7 +20,9 @@ docker run -d -p 5000:5000 \
 ```
 
 ```
-docker run -d -p 5000:5000 \
+docker run -d \
+    --log-opt max-size=50m \
+    -p 5000:5000 \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -v $HOME:/wwwroot \
